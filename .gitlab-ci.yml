@@ -1,0 +1,27 @@
+image: node:14
+
+stages:
+  - build
+  - deploy
+
+# Job to build your project
+build:
+  stage: build
+  script:
+    - npm install   # Install dependencies
+    - npm run build # Build the project (modify according to your build script)
+  artifacts:
+    paths:
+      - public      # Assuming the build output is in the 'public' directory
+
+# Job to deploy your project to GitLab Pages
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public   # Create the public directory if it doesn’t exist
+    - cp -r * public    # Copy all files to the public directory
+  artifacts:
+    paths:
+      - public  # Specify the directory to be deployed
+  only:
+    - master    # Deploy only from the master branch
