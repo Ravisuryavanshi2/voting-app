@@ -15,11 +15,11 @@
 
     <body>
         <h1>Voting <%- Application %>:</h1>
-        <form action="/todo/edit/<%= todoIdx %>" method="post">
+        <form action="/voting/edit/<%= votingIdx %>" method="post">
             <p>
-                <label for="editTodo">Change to:</label>
+                <label for="editVoting">Change to:</label>
                 <input type="hidden" name="_method" value="PUT">
-                <input type="text" name="editTodo" id="editTodo" autofocus placeholder="<%- todo %>" />
+                <input type="text" name="editVoting" id="editVoting" autofocus placeholder="<%- voting %>" />
                 <input type="submit" value="Save" />
             </p>
         </form>

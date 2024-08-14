@@ -91,11 +91,11 @@
     <body>
         <h1>Voting Application</h1>
         <ul>
-            <% todolist.forEach(function(todo, index) { %>
+            <% votinglist.forEach(function(voting, index) { %>
             <li>
                 <a href="/voting/delete/<%= index %>" class="delete-btn">✘</a>
                 <a href="/voting/<%= index %>" class="edit-btn">✎</a>
-                <%- todo %>
+                <%- voting %>
             </li>
             <% }); %>
         </ul>
